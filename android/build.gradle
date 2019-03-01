@@ -1,0 +1,47 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        flatDir{
+            dirs "../../react-native-txocr/andriod/txocrlib"
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.3.1'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    repositories {
+        flatDir{
+            dirs "../../react-native-txocr/andriod/txocrlib"
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+
+dependencies {
+    implementation(name:'WbCloudFaceReflectLiveSdk-v2.1.14-3cbec02', ext:'aar')
+    implementation(name:'WbCloudNormal-release-v3.0.26-fb0c518', ext:'aar')
+    implementation 'com.facebook.react:react-native:+'
+
+
+}
+  
